@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кафедра математического моделирования и искусственного интеллекта</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        to {
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+        }
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .glass-morphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-morphism">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-lg">М</span>
+            </div>
+            <div>
+              <h1 class="text-white font-bold text-xl">ММИИ</h1>
+              <p class="text-gray-200 text-xs">ХАИ им. Жуковского</p>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <div class="nav-item relative">
+              <a href="#about" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">О кафедре</a>
+              <div class="dropdown absolute top-full left-0 mt-2 w-64 glass-morphism rounded-lg p-4">
+                <a href="#history" class="block text-white hover:text-blue-300 py-2">История</a>
+                <a href="#achievements" class="block text-white hover:text-blue-300 py-2">Достижения</a>
+                <a href="#structure" class="block text-white hover:text-blue-300 py-2">Структура</a>
+              </div>
+            </div>
+
+            <div class="nav-item relative">
+              <a href="#education" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Образование</a>
+              <div class="dropdown absolute top-full left-0 mt-2 w-64 glass-morphism rounded-lg p-4">
+                <a href="#bachelor" class="block text-white hover:text-blue-300 py-2">Бакалавриат</a>
+                <a href="#master" class="block text-white hover:text-blue-300 py-2">Магистратура</a>
+                <a href="#phd" class="block text-white hover:text-blue-300 py-2">Аспирантура</a>
+              </div>
+            </div>
+
+            <a href="#staff" class="text-white hover:text-blue-300 transition-colors duration-300">Преподаватели</a>
+            <a href="#research" class="text-white hover:text-blue-300 transition-colors duration-300">Исследования</a>
+            <a href="#publications" class="text-white hover:text-blue-300 transition-colors duration-300">Публикации</a>
+            <a href="#contacts" class="text-white hover:text-blue-300 transition-colors duration-300">Контакты</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button class="text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center pt-20">
+      <div class="container mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Кафедра математического
+              <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"> моделирования </span>
+              и ИИ
+            </h1>
+            <p class="text-xl text-gray-200 mb-8 leading-relaxed">Центр подготовки интеллектуальной элиты в сфере аэрокосмической техники с 1968 года</p>
+            <div class="flex flex-wrap gap-4">
+              <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 animate-glow">Поступить</button>
+              <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">Узнать больше</button>
+            </div>
+          </div>
+
+          <div class="animate-float">
+            <div class="relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl transform rotate-6 opacity-50"></div>
+              <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600">55+</div>
+                    <div class="text-sm text-gray-600">Лет опыта</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600">20+</div>
+                    <div class="text-sm text-gray-600">Преподавателей</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600">44+</div>
+                    <div class="text-sm text-gray-600">Диссертаций</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600">50+</div>
+                    <div class="text-sm text-gray-600">Учебных пособий</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 animate-slide-up">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">О кафедре математического моделирования и искусственного интеллекта</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- История кафедры -->
+        <div class="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-12 rounded-3xl shadow-lg">
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">История и наследие</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div class="text-6xl font-bold text-blue-500 mb-4">1968</div>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                  Кафедра основана в 1968 году. Изначально называлась кафедрой информатики и была создана в Харьковском авиационном институте как центр подготовки интеллектуальной элиты в сфере
+                  аэрокосмической техники для обеспечения стратегического приоритета в освоении космоса.
+                </p>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                  <p class="text-gray-800 font-medium italic">
+                    "О каждом сотруднике кафедры информатики можно сказать, что он в той или иной степени является воспитанником выдающегося ученого, имя которого хорошо известно у нас и за рубежом –
+                    академика Владимира Логвиновича Рвачева."
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="text-center bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">14</div>
+                    <div class="text-sm text-gray-600">Докторских диссертаций</div>
+                  </div>
+                  <div class="text-center bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">30+</div>
+                    <div class="text-sm text-gray-600">Кандидатских диссертаций</div>
+                  </div>
+                  <div class="text-center bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl font-bold text-green-600 mb-2">20+</div>
+                    <div class="text-sm text-gray-600">Преподавателей</div>
+                  </div>
+                  <div class="text-center bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">50+</div>
+                    <div class="text-sm text-gray-600">Учебных пособий</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Преподавательский состав -->
+        <div class="mb-16">
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-10 rounded-3xl shadow-lg">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Преподавательский состав</h3>
+            <div class="max-w-4xl mx-auto">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    На кафедре работают более <span class="font-bold text-purple-600">20 преподавателей</span>, в том числе <span class="font-bold text-blue-600">7 профессоров</span> и
+                    <span class="font-bold text-green-600">6 доцентов</span>. Преподавательским коллективом подготовлено более
+                    <span class="font-bold text-orange-600">50 учебных и методических пособий</span>, выпущены монографии и <span class="font-bold text-red-600">3 учебника</span>.
+                  </p>
+                  <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h4 class="font-bold text-gray-900 mb-4">Международный опыт:</h4>
+                    <p class="text-gray-700">Преподаватели кафедры проходят научные стажировки в Германии, Южной Корее и США.</p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-4">Сотрудничество с ведущими компаниями:</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span class="text-gray-700">Научно-технический центр (Украина)</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span class="text-gray-700">Nuovo Pignone S.p.A. (GE Power Systems), Флоренция, Италия</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      <span class="text-gray-700">Doosan Heavy Industries, Даеджон, Южная Корея</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                      <span class="text-gray-700">China Aviation Industry Corporation, Чжучжоу, КНР</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Условия подготовки кадров -->
+        <div class="mb-16">
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-10 rounded-3xl shadow-lg">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Условия подготовки кадров</h3>
+            <div class="max-w-4xl mx-auto">
+              <div class="mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                  Подготовка бакалавров и магистров осуществляется по специальностям <span class="font-bold text-blue-600">«Прикладная математика»</span> (специализации "Искусственный интеллект",
+                  "Математическое и компьютерное моделирование") и <span class="font-bold text-purple-600">«Компьютерные науки»</span> (специализация "Интеллектуальные системы и технологии").
+                </p>
+
+                <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                  <p class="text-gray-700 italic">
+                    "Благодаря высокому интеллектуальному потенциалу кафедры, носителем которого является профессорско-преподавательский состав, мы обеспечиваем универсальную подготовку кадров
+                    наиболее полно отвечающих современному представлению о требованиях, предъявляемых к специалистам по программному обеспечению, информационным системам и информационным технологиям
+                    (IS/IT)."
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-4">Техническая база:</h4>
+                  <div class="space-y-3">
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                      <span class="text-gray-700">Компьютерных класса с современным ПО</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">40</div>
+                      <span class="text-gray-700">Посадочных мест</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">∞</div>
+                      <span class="text-gray-700">Постоянный выход в Internet</span>
+                    </div>
+                    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                      <span class="text-gray-700">Научно-исследовательская лаборатория</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-4">Возможности для студентов:</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <h5 class="font-semibold text-gray-900 mb-2">Научная деятельность</h5>
+                      <p class="text-sm text-gray-700">Участие в госбюджетных и хоздоговорных работах с младших курсов</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <h5 class="font-semibold text-gray-900 mb-2">Активная жизнь</h5>
+                      <p class="text-sm text-gray-700">Олимпиады, научно-технические семинары, конференции</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <h5 class="font-semibold text-gray-900 mb-2">Спорт и досуг</h5>
+                      <p class="text-sm text-gray-700">Легкоатлетический манеж, 2 спортзала, бассейн</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                      <h5 class="font-semibold text-gray-900 mb-2">Поддержка</h5>
+                      <p class="text-sm text-gray-700">Стипендии, перевод на бюджет, обеспечение общежитием</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Принципы работы -->
+        <div class="bg-gradient-to-r from-gray-900 to-gray-700 p-10 rounded-3xl text-white shadow-2xl">
+          <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Наши принципы</h3>
+            <p class="text-xl leading-relaxed mb-8">
+              Основные принципы в работе со студентами – <span class="text-blue-400 font-semibold">высокий профессионализм</span>, <span class="text-green-400 font-semibold">исполнительность</span> в
+              сочетании с <span class="text-purple-400 font-semibold">индивидуальным подходом</span> и <span class="text-orange-400 font-semibold">терпимостью</span> – которым следуют преподаватели
+              нашей кафедры уже много лет, обеспечивают нашим ученикам востребованность в условиях острой конкуренции на рынках труда.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="bg-white rounded-3xl shadow-2xl p-12">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-8 mx-auto">
+                <span class="text-white text-4xl font-bold">ЧАГ</span>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Руководство кафедры</h2>
+              <div class="mb-6">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-2">Чухрай Андрей Григорьевич</h3>
+                <p class="text-gray-600 font-medium">Заведующий кафедрой</p>
+                <p class="text-gray-600">Профессор, доктор технических наук</p>
+              </div>
+              <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
+                <p class="text-gray-700 italic">"Каждый сотрудник кафедры является воспитанником выдающегося ученого академика Владимира Логвиновича Рвачева"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Programs -->
+    <section id="education" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Образовательные программы</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Applied Mathematics -->
+          <div class="bg-gradient-to-br from-blue-600 to-purple-700 p-8 rounded-2xl text-white shadow-2xl">
+            <h3 class="text-2xl font-bold mb-6">Прикладная математика</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>Искусственный интеллект</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>Математическое и компьютерное моделирование</span>
+              </div>
+            </div>
+            <div class="mt-8 p-4 bg-white bg-opacity-20 rounded-lg">
+              <p class="text-sm">Подготовка специалистов для решения сложных математических задач в различных областях науки и техники</p>
+            </div>
+          </div>
+
+          <!-- Computer Science -->
+          <div class="bg-gradient-to-br from-purple-600 to-pink-700 p-8 rounded-2xl text-white shadow-2xl">
+            <h3 class="text-2xl font-bold mb-6">Компьютерные науки</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>Интеллектуальные системы и технологии</span>
+              </div>
+            </div>
+            <div class="mt-8 p-4 bg-white bg-opacity-20 rounded-lg">
+              <p class="text-sm">Универсальная подготовка кадров по программному обеспечению, информационным системам и технологиям (IS/IT)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graduate School -->
+        <div class="mt-12 bg-gradient-to-r from-gray-900 to-gray-700 p-8 rounded-2xl text-white">
+          <div class="text-center">
+            <h3 class="text-2xl font-bold mb-4">Аспирантура</h3>
+            <p class="text-gray-300 mb-6">Высокий интеллектуальный потенциал профессорско-преподавательского состава обеспечивает качественную подготовку научных кадров</p>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-2">14</div>
+                <div class="text-sm text-gray-300">Докторских диссертаций</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-purple-400 mb-2">30+</div>
+                <div class="text-sm text-gray-300">Кандидатских диссертаций</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Base -->
+    <section class="py-20 bg-gray-900 text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Техническая база</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-gray-800 rounded-xl">
+            <div class="text-3xl font-bold text-blue-400 mb-2">3</div>
+            <div class="text-sm text-gray-300">Компьютерных класса</div>
+          </div>
+          <div class="text-center p-6 bg-gray-800 rounded-xl">
+            <div class="text-3xl font-bold text-purple-400 mb-2">40</div>
+            <div class="text-sm text-gray-300">Посадочных мест</div>
+          </div>
+          <div class="text-center p-6 bg-gray-800 rounded-xl">
+            <div class="text-3xl font-bold text-green-400 mb-2">100%</div>
+            <div class="text-sm text-gray-300">Подключение к Internet</div>
+          </div>
+          <div class="text-center p-6 bg-gray-800 rounded-xl">
+            <div class="text-3xl font-bold text-orange-400 mb-2">1</div>
+            <div class="text-sm text-gray-300">НИЛ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold">М</span>
+              </div>
+              <div>
+                <h3 class="font-bold">ММИИ</h3>
+                <p class="text-gray-400 text-sm">ХАИ им. Жуковского</p>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm">Кафедра математического моделирования и искусственного интеллекта</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Образование</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white transition-colors">Бакалавриат</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Магистратура</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Аспирантура</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Деятельность</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white transition-colors">Исследования</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Публикации</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Проекты</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Контакты</h4>
+            <div class="space-y-2 text-sm text-gray-400">
+              <p>Харьков, Украина</p>
+              <p>ХАИ им. Н.Е. Жуковского</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2025 Кафедра математического моделирования и искусственного интеллекта. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
