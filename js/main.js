@@ -22,48 +22,42 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Анимация открытия/закрытия полного списка литературы с прокруткой
-document.addEventListener("DOMContentLoaded", function () {
-  const btnShow = document.getElementById("show-all-books");
-  const preview = document.getElementById("books-preview");
-  const full = document.getElementById("books-full");
+// Books toggle functionality
+const showAllBooksBtn = document.getElementById("show-all-books");
+const hideAllBooksBtn = document.getElementById("hide-all-books");
+const booksPreview = document.getElementById("books-preview");
+const booksFull = document.getElementById("books-full");
 
-  // Открыть список
-  if (btnShow && full) {
-    btnShow.addEventListener("click", function () {
-      preview.classList.add("hidden");
-      full.style.display = "block";
-      setTimeout(() => {
-        full.classList.add("open");
-        full.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 10);
-      btnShow.style.display = "none";
-    });
-  }
-
-  // Закрыть список с прокруткой после завершения анимации
-  if (full) {
-    let needScrollToPreview = false;
-    full.addEventListener("transitionend", function (e) {
-      if (!full.classList.contains("open")) {
-        full.style.display = "none";
-        if (needScrollToPreview) {
-          const previewSection = document.getElementById("books-preview");
-          if (previewSection) {
-            previewSection.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-          needScrollToPreview = false;
-        }
-      }
-    });
-
-    document.addEventListener("click", function (e) {
-      if (e.target && e.target.id === "hide-all-books") {
-        full.classList.remove("open");
-        btnShow.style.display = "inline-block";
-        preview.classList.remove("hidden");
-        needScrollToPreview = true;
-      }
-    });
-  }
+showAllBooksBtn.addEventListener("click", () => {
+  booksPreview.style.display = "none";
+  booksFull.classList.remove("opacity-0", "max-h-0");
+  booksFull.classList.add("opacity-100", "max-h-full");
+  showAllBooksBtn.style.display = "none";
 });
+
+hideAllBooksBtn.addEventListener("click", () => {
+  booksFull.classList.add("opacity-0", "max-h-0");
+  booksFull.classList.remove("opacity-100", "max-h-full");
+  booksPreview.style.display = "grid";
+  showAllBooksBtn.style.display = "inline-block";
+});
+
+// Мобильное меню
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMobileMenu = document.getElementById("close-mobile-menu");
+
+if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("-translate-x-full");
+  });
+  closeMobileMenu.addEventListener("click", () => {
+    mobileMenu.classList.add("-translate-x-full");
+  });
+  // Закрытие меню при клике на ссылку
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("-translate-x-full");
+    });
+  });
+}

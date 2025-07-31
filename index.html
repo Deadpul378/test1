@@ -5,91 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Кафедра математического моделирования и искусственного интеллекта</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      @keyframes glow {
-        from {
-          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-        }
-        to {
-          box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
-        }
-      }
-      .gradient-bg {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-      .glass-morphism {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .nav-item:hover .dropdown {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      .dropdown {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.97); /* почти белый фон */
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18); /* мягкая тень */
-        color: #222; /* тёмный текст */
-        backdrop-filter: blur(8px);
-      }
-      .dropdown a {
-        color: #222 !important; /* тёмный текст для ссылок */
-        font-weight: 500;
-      }
-      .dropdown a:hover {
-        color: #2563eb !important; /* синий при наведении */
-        background: rgba(37, 99, 235, 0.07);
-        border-radius: 6px;
-      }
-      /* Сделать текст навигации тёмным на светлом фоне */
-      nav.glass-morphism .md\:flex > a,
-      nav.glass-morphism .md\:flex .nav-item > a {
-        color: #222 !important;
-        text-shadow: none;
-      }
-      nav.glass-morphism .md\:flex > a:hover,
-      nav.glass-morphism .md\:flex .nav-item > a:hover {
-        color: #2563eb !important;
-      }
-    </style>
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-morphism">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-white/20 shadow">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
@@ -97,71 +16,77 @@
               <span class="text-white font-bold text-lg">М</span>
             </div>
             <div>
-              <h1 class="text-white font-bold text-xl">ММИИ</h1>
-              <p class="text-gray-200 text-xs">ХАИ им. Жуковского</p>
+              <h1 class="text-gray-900 font-bold text-xl">ММИИ</h1>
+              <p class="text-gray-600 text-xs">ХАИ им. Жуковского</p>
             </div>
           </div>
 
           <div class="hidden md:flex items-center space-x-8">
             <!-- Главная -->
-            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Главная</a>
-            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Новости</a>
+            <a href="./index.html" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 font-medium">Главная</a>
+            <a href="./news.html" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 font-medium">Новости</a>
 
             <!-- Специальности -->
-            <div class="nav-item relative">
-              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Специальности</a>
-              <div class="dropdown absolute top-full left-0 mt-2 w-64 glass-morphism rounded-lg p-4">
-                <div class="mb-2 text-gray-200 font-semibold text-sm">Бакалаврат</div>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Компьютерные науки</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Прикладная математика</a>
+            <div class="relative group">
+              <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 cursor-pointer font-medium">Специальности</a>
+              <div
+                class="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-lg shadow-xl rounded-lg p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <div class="mb-2 text-gray-600 font-semibold text-sm">Бакалаврат</div>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Компьютерные науки</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Прикладная математика</a>
                 <div class="my-2 border-t border-gray-200"></div>
-                <div class="mb-2 text-gray-200 font-semibold text-sm">Магистратура</div>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Компьютерные науки</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Прикладная математика</a>
+                <div class="mb-2 text-gray-600 font-semibold text-sm">Магистратура</div>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Компьютерные науки</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Прикладная математика</a>
               </div>
             </div>
 
             <!-- Абитуриенту -->
-            <div class="nav-item relative">
-              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Абитуриенту</a>
-              <div class="dropdown absolute top-full left-0 mt-2 w-72 glass-morphism rounded-lg p-4">
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Общая информация</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Правила приёма</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Поступление из техникумов и колледжей</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Перечень изучаемых дисциплин</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Трудоустройство выпускников</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Международное сотрудничество</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Отзывы выпускников</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">События для абитуриента</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Контакты</a>
+            <div class="relative group">
+              <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 cursor-pointer font-medium">Абитуриенту</a>
+              <div
+                class="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-lg shadow-xl rounded-lg p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Общая информация</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Правила приёма</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Поступление из техникумов и колледжей</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Перечень изучаемых дисциплин</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Трудоустройство выпускников</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Международное сотрудничество</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Отзывы выпускников</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">События для абитуриента</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Контакты</a>
               </div>
             </div>
 
             <!-- Кафедра -->
-            <div class="nav-item relative">
-              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Кафедра</a>
-              <div class="dropdown absolute top-full left-0 mt-2 w-80 glass-morphism rounded-lg p-4">
-                <a href="#" class="block text-white hover:text-blue-300 py-2">О кафедре</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">История кафедры</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Преподаватели</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Новости</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Научные направления</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Международное сотрудничество</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Научные разработки</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Добавить отзыв выпускника</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Олимпиады</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Нормативная документация</a>
-                <a href="#" class="block text-white hover:text-blue-300 py-2">Контакты</a>
+            <div class="relative group">
+              <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 cursor-pointer font-medium">Кафедра</a>
+              <div
+                class="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-lg shadow-xl rounded-lg p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">О кафедре</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">История кафедры</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Преподаватели</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Новости</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Научные направления</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Международное сотрудничество</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Научные разработки</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Добавить отзыв выпускника</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Олимпиады</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Нормативная документация</a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-2 rounded transition-all">Контакты</a>
               </div>
             </div>
 
             <!-- Наши достижения -->
-            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Наши достижения</a>
+            <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors duration-300 font-medium">Наши достижения</a>
           </div>
 
-          <!-- Mobile menu button (оставьте как есть или адаптируйте под новые пункты) -->
+          <!-- Mobile menu button -->
           <div class="md:hidden">
-            <button class="text-white">
+            <button id="mobile-menu-btn" class="text-gray-900">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -171,8 +96,60 @@
       </div>
     </nav>
 
+    <!-- Мобильное меню -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 flex flex-col p-8 space-y-4 transition-all duration-300 transform -translate-x-full md:hidden overflow-y-auto">
+      <button id="close-mobile-menu" class="self-end mb-8 text-2xl">&times;</button>
+      <a href="#" class="text-gray-900 font-medium py-2">Главная</a>
+      <a href="#" class="text-gray-900 font-medium py-2">Новости</a>
+      <!-- Специальности -->
+      <details>
+        <summary class="text-gray-900 font-medium py-2 cursor-pointer">Специальности</summary>
+        <div class="pl-4 flex flex-col space-y-2 mt-2">
+          <div class="font-semibold text-gray-600 text-sm">Бакалаврат</div>
+          <a href="#" class="text-gray-700">Компьютерные науки</a>
+          <a href="#" class="text-gray-700">Прикладная математика</a>
+          <div class="my-2 border-t border-gray-200"></div>
+          <div class="font-semibold text-gray-600 text-sm">Магистратура</div>
+          <a href="#" class="text-gray-700">Компьютерные науки</a>
+          <a href="#" class="text-gray-700">Прикладная математика</a>
+          <div class="my-2 border-t border-gray-200"></div>
+          <div class="font-semibold text-gray-600 text-sm">Аспирантура</div>
+          <a href="#" class="text-gray-700">Математическое и компьютерное моделирование</a>
+        </div>
+      </details>
+      <!-- Абитуриенту -->
+      <details>
+        <summary class="text-gray-900 font-medium py-2 cursor-pointer">Абитуриенту</summary>
+        <div class="pl-4 flex flex-col space-y-2 mt-2">
+          <a href="#" class="text-gray-700">Общая информация</a>
+          <a href="#" class="text-gray-700">Правила приёма</a>
+          <a href="#" class="text-gray-700">Поступление из техникумов и колледжей</a>
+          <a href="#" class="text-gray-700">Перечень изучаемых дисциплин</a>
+          <a href="#" class="text-gray-700">Трудоустройство выпускников</a>
+          <a href="#" class="text-gray-700">Международное сотрудничество</a>
+          <a href="#" class="text-gray-700">Отзывы выпускников</a>
+          <a href="#" class="text-gray-700">События для абитуриента</a>
+          <a href="#" class="text-gray-700">Контакты</a>
+        </div>
+      </details>
+      <!-- Кафедра -->
+      <details>
+        <summary class="text-gray-900 font-medium py-2 cursor-pointer">Кафедра</summary>
+        <div class="pl-4 flex flex-col space-y-2 mt-2">
+          <a href="#" class="text-gray-700">О кафедре</a>
+          <a href="#" class="text-gray-700">Преподаватели</a>
+          <a href="#" class="text-gray-700">Научные разработки</a>
+          <a href="#" class="text-gray-700">Добавить отзыв выпускника</a>
+          <a href="#" class="text-gray-700">Олимпиады</a>
+          <a href="#" class="text-gray-700">Нормативная документация</a>
+          <a href="#" class="text-gray-700">Контакты</a>
+        </div>
+      </details>
+      <a href="#" class="text-gray-900 font-medium py-2">Наши достижения</a>
+    </div>
+
     <!-- Hero Section -->
-    <section class="gradient-bg min-h-screen flex items-center justify-center pt-20">
+    <section class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 min-h-screen flex items-center justify-center pt-20">
       <div class="container mx-auto px-6 py-20">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="animate-fade-in">
@@ -530,7 +507,7 @@
         <div class="text-center">
           <button id="show-all-books" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300">Показать полный список</button>
         </div>
-        <div id="books-full" class="books-transition mt-8">
+        <div id="books-full" class="opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-8">
           <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">Информатика: Учебное пособие для 10-11 классов средних общеобразовательных школ / А.Ю. Соколов и др. – Киев: Форум, 2001</p>
@@ -561,8 +538,8 @@
             </div>
             <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">
-                Грицик В.В., Шевченко А.І., Яковлев С.В., Кісельова О.М. Математичні методи оптимізації та інтелектуальні комп’ютерні технології моделювання складних процесів і систем з урахуванням
-                просторових форм об’єктів – Монографія. Ін-т пробл. штучного інтелекту НАН України. – Донецьк : Наука і освіта, 2012.
+                Грицик В.В., Шевченко А.І., Яковлев С.В., Кісельова О.М. Математичні методи оптимізації та інтелектуальні комп'ютерні технології моделювання складних процесів і систем з урахуванням
+                просторових форм об'єктів – Монографія. Ін-т пробл. штучного інтелекту НАН України. – Донецьк : Наука і освіта, 2012.
               </p>
             </div>
             <div class="bg-gradient-to-br from-orange-50 to-orange-500 p-6 rounded-2xl shadow-md">
@@ -584,13 +561,13 @@
             <div class="bg-gradient-to-br from-yellow-50 to зеленому-50 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Кубрак В.П. Правова статистика. – Підручник. Харків: НУВС.- 2004.</p>
             </div>
-            <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-2xl shadow-md">
+            <div class="bg-gradient-to-br from-blue-50 to зеленому-50 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Кухарев Б.Ю. Дослідження операцій – Навчальний посібник. Харків: НУВС, 2003.</p>
             </div>
-            <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl shadow-md">
+            <div class="bg-gradient-to-br from-purple-50 to синьому-50 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">Кухаренок М.А., Струков В.М., Яковлев С.В. Основы алгоритмизации и программирования. – Учебное пособие. Харьков: УниВД, 1998.</p>
             </div>
-            <div class="bg-gradient-to-br from-orange-50 to-orange-500 p-6 rounded-2xl shadow-md">
+            <div class="bg-gradient-to-br from-orange-50 to оранжевому-500 p-6 rounded-2xl shadow-md">
               <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Бодянский Е.В. Правовая статистика. – Учебное пособие. Харьков: УниВД, 1996.</p>
             </div>
           </div>
@@ -650,7 +627,6 @@
         </div>
       </div>
     </footer>
-
     <script src="./js/main.js"></script>
   </body>
 </html>

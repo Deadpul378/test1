@@ -3,19 +3,29 @@ module.exports = {
   content: ["./**/*.html"],
   theme: {
     extend: {
-      colors: {
-        primary: "#2563eb",
-        secondary: "#1e40af",
-        accent: "#3b82f6",
-        dark: "#1e293b",
-        "gradient-start": "#667eea",
-        "gradient-end": "#764ba2",
-      },
       animation: {
-        "fade-in": "fadeIn 0.6s ease-in-out",
+        "fade-in": "fadeIn 1s ease-out",
         "slide-up": "slideUp 0.8s ease-out",
         float: "float 3s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(50px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        glow: {
+          "0%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" },
+          "100%": { boxShadow: "0 0 30px rgba(59, 130, 246, 0.8)" },
+        },
       },
     },
   },
