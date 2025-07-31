@@ -21,3 +21,49 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("backdrop-blur-xl");
   }
 });
+
+// Анимация открытия/закрытия полного списка литературы с прокруткой
+document.addEventListener("DOMContentLoaded", function () {
+  const btnShow = document.getElementById("show-all-books");
+  const preview = document.getElementById("books-preview");
+  const full = document.getElementById("books-full");
+
+  // Открыть список
+  if (btnShow && full) {
+    btnShow.addEventListener("click", function () {
+      preview.classList.add("hidden");
+      full.style.display = "block";
+      setTimeout(() => {
+        full.classList.add("open");
+        full.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 10);
+      btnShow.style.display = "none";
+    });
+  }
+
+  // Закрыть список с прокруткой после завершения анимации
+  if (full) {
+    let needScrollToPreview = false;
+    full.addEventListener("transitionend", function (e) {
+      if (!full.classList.contains("open")) {
+        full.style.display = "none";
+        if (needScrollToPreview) {
+          const previewSection = document.getElementById("books-preview");
+          if (previewSection) {
+            previewSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          needScrollToPreview = false;
+        }
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (e.target && e.target.id === "hide-all-books") {
+        full.classList.remove("open");
+        btnShow.style.display = "inline-block";
+        preview.classList.remove("hidden");
+        needScrollToPreview = true;
+      }
+    });
+  }
+});

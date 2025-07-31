@@ -61,6 +61,19 @@
         visibility: hidden;
         transform: translateY(-10px);
         transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.97); /* почти белый фон */
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18); /* мягкая тень */
+        color: #222; /* тёмный текст */
+        backdrop-filter: blur(8px);
+      }
+      .dropdown a {
+        color: #222 !important; /* тёмный текст для ссылок */
+        font-weight: 500;
+      }
+      .dropdown a:hover {
+        color: #2563eb !important; /* синий при наведении */
+        background: rgba(37, 99, 235, 0.07);
+        border-radius: 6px;
       }
     </style>
   </head>
@@ -80,31 +93,63 @@
           </div>
 
           <div class="hidden md:flex items-center space-x-8">
+            <!-- Главная -->
+            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Главная</a>
+            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Новости</a>
+
+            <!-- Специальности -->
             <div class="nav-item relative">
-              <a href="#about" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">О кафедре</a>
+              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Специальности</a>
               <div class="dropdown absolute top-full left-0 mt-2 w-64 glass-morphism rounded-lg p-4">
-                <a href="#history" class="block text-white hover:text-blue-300 py-2">История</a>
-                <a href="#achievements" class="block text-white hover:text-blue-300 py-2">Достижения</a>
-                <a href="#structure" class="block text-white hover:text-blue-300 py-2">Структура</a>
+                <div class="mb-2 text-gray-200 font-semibold text-sm">Бакалаврат</div>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Компьютерные науки</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Прикладная математика</a>
+                <div class="my-2 border-t border-gray-200"></div>
+                <div class="mb-2 text-gray-200 font-semibold text-sm">Магистратура</div>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Компьютерные науки</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Прикладная математика</a>
               </div>
             </div>
 
+            <!-- Абитуриенту -->
             <div class="nav-item relative">
-              <a href="#education" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Образование</a>
-              <div class="dropdown absolute top-full left-0 mt-2 w-64 glass-morphism rounded-lg p-4">
-                <a href="#bachelor" class="block text-white hover:text-blue-300 py-2">Бакалавриат</a>
-                <a href="#master" class="block text-white hover:text-blue-300 py-2">Магистратура</a>
-                <a href="#phd" class="block text-white hover:text-blue-300 py-2">Аспирантура</a>
+              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Абитуриенту</a>
+              <div class="dropdown absolute top-full left-0 mt-2 w-72 glass-morphism rounded-lg p-4">
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Общая информация</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Правила приёма</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Поступление из техникумов и колледжей</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Перечень изучаемых дисциплин</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Трудоустройство выпускников</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Международное сотрудничество</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Отзывы выпускников</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">События для абитуриента</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Контакты</a>
               </div>
             </div>
 
-            <a href="#staff" class="text-white hover:text-blue-300 transition-colors duration-300">Преподаватели</a>
-            <a href="#research" class="text-white hover:text-blue-300 transition-colors duration-300">Исследования</a>
-            <a href="#publications" class="text-white hover:text-blue-300 transition-colors duration-300">Публикации</a>
-            <a href="#contacts" class="text-white hover:text-blue-300 transition-colors duration-300">Контакты</a>
+            <!-- Кафедра -->
+            <div class="nav-item relative">
+              <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300 cursor-pointer">Кафедра</a>
+              <div class="dropdown absolute top-full left-0 mt-2 w-80 glass-morphism rounded-lg p-4">
+                <a href="#" class="block text-white hover:text-blue-300 py-2">О кафедре</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">История кафедры</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Преподаватели</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Новости</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Научные направления</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Международное сотрудничество</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Научные разработки</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Добавить отзыв выпускника</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Олимпиады</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Нормативная документация</a>
+                <a href="#" class="block text-white hover:text-blue-300 py-2">Контакты</a>
+              </div>
+            </div>
+
+            <!-- Наши достижения -->
+            <a href="#" class="text-white hover:text-blue-300 transition-colors duration-300">Наши достижения</a>
           </div>
 
-          <!-- Mobile menu button -->
+          <!-- Mobile menu button (оставьте как есть или адаптируйте под новые пункты) -->
           <div class="md:hidden">
             <button class="text-white">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -449,6 +494,98 @@
           <div class="text-center p-6 bg-gray-800 rounded-xl">
             <div class="text-3xl font-bold text-orange-400 mb-2">1</div>
             <div class="text-sm text-gray-300">НИЛ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция литературы -->
+    <section id="publications" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Литература</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <p class="mt-4 text-lg text-gray-700">Вы знаете о нас по учебникам и книгам:</p>
+        </div>
+        <div id="books-preview" class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-md">
+            <p class="font-semibold text-gray-900 mb-2">Информатика: Учебное пособие для 10-11 классов средних общеобразовательных школ / А.Ю. Соколов и др. – Киев: Форум, 2001</p>
+            <p class="text-sm text-gray-600">Учебное пособие для школьников</p>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl shadow-md">
+            <p class="font-semibold text-gray-900 mb-2">Информатика для инженеров / Под ред. А.Ю. Соколова. – Харьков: Факт, 2005</p>
+            <p class="text-sm text-gray-600">Учебное пособие для инженеров</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button id="show-all-books" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300">Показать полный список</button>
+        </div>
+        <div id="books-full" class="books-transition mt-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Информатика: Учебное пособие для 10-11 классов средних общеобразовательных школ / А.Ю. Соколов и др. – Киев: Форум, 2001</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Информатика для инженеров / Под ред. А.Ю. Соколова. – Харьков: Факт, 2005</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Системное совершенствование элементов сложных технических систем на основе концепции обратных задач: монография/ В.Е. Стрелец, А.А. Трончук, Е.М. Угрюмова и др.; под общ. ред. проф.
+                М.Л. Угрюмова. – Х.: Нац. аэрокосм. ун-т им. Н. Е. Жуковского «Харьк. авиац. ин-т», 2013.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-400 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Информационная технология диагностирования сложных технических систем в условиях неопределенности входных данных : монография/ В.Е.Стрелец, Е.М.Угрюмова, Ю.А Воробьев, М.Л. Угрюмов. –
+                Х.: Нац. аэрокосм. ун-т им. Н.Е. Жуковского «Харьк. авиац. ин-т», 2015.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Методи обчислення статистичних параметрів в подієвому моделюванні – Х:Фактор, Чернишов Ю.К., 2014. – 244 с.</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Yakovlev S. , Pichugina O. Mathematical and Computational Approaches in Advancing Modern Science and Engineering: Continuous Approaches to the Unconstrained Binary Quadratic Problems.
+                Springer, Switzerland (2016)
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Грицик В.В., Шевченко А.І., Яковлев С.В., Кісельова О.М. Математичні методи оптимізації та інтелектуальні комп’ютерні технології моделювання складних процесів і систем з урахуванням
+                просторових форм об’єктів – Монографія. Ін-т пробл. штучного інтелекту НАН України. – Донецьк : Наука і освіта, 2012.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-orange-50 to-orange-500 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Яковлев С.В., Гнусов Ю.В. Математические методы оценки состояния и прог­нозирования прес­тупности. – Монография. Харьков: Ун-т внутр. дел, 1998.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Яковлев С.В. и др. Элементы теории геометрического проектирования. – Монография. Киев: Наук. думка, 1995.</p>
+            </div>
+            <div class="bg-gradient-to-br from-gray-50 to-gray-300 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">
+                Стоян Ю.Г., Яковлев С.В. Математические модели и оптимизационные методы геометрического проектирования. – Монография. Киев: Наук. думка, 1986.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Евсеева Л.Г., Шеховцов С.Б. Теория вероятностей и математическая статистика. – Учебное пособие. Харьков: ХЭПУ, 2005.</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to зеленому-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Кубрак В.П. Правова статистика. – Підручник. Харків: НУВС.- 2004.</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Кухарев Б.Ю. Дослідження операцій – Навчальний посібник. Харків: НУВС, 2003.</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Кухаренок М.А., Струков В.М., Яковлев С.В. Основы алгоритмизации и программирования. – Учебное пособие. Харьков: УниВД, 1998.</p>
+            </div>
+            <div class="bg-gradient-to-br from-orange-50 to-orange-500 p-6 rounded-2xl shadow-md">
+              <p class="font-semibold text-gray-900 mb-2">Яковлев С.В., Бодянский Е.В. Правовая статистика. – Учебное пособие. Харьков: УниВД, 1996.</p>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <button id="hide-all-books" class="bg-gray-300 text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-400 transition-all duration-300">Скрыть список</button>
           </div>
         </div>
       </div>
