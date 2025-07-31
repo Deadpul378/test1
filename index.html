@@ -75,6 +75,16 @@
         background: rgba(37, 99, 235, 0.07);
         border-radius: 6px;
       }
+      /* Сделать текст навигации тёмным на светлом фоне */
+      nav.glass-morphism .md\:flex > a,
+      nav.glass-morphism .md\:flex .nav-item > a {
+        color: #222 !important;
+        text-shadow: none;
+      }
+      nav.glass-morphism .md\:flex > a:hover,
+      nav.glass-morphism .md\:flex .nav-item > a:hover {
+        color: #2563eb !important;
+      }
     </style>
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans">
